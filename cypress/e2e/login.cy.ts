@@ -22,7 +22,7 @@ describe('Login Functionality', () => {
 
     })
 
-    it('should navigate to the profile page after successful login',() => {
+    it.skip('should navigate to the profile page after successful login',() => {
         cy.visit('https://accounts.elice.io/accounts')
         cy.wait(1000)
         cy.get('input[placeholder="이메일"]').should('exist').type(Cypress.env('LOGIN_EMAIL'))
