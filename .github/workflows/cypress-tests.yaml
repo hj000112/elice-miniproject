@@ -1,0 +1,27 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches:
+      - main  # 테스트하고자 하는 브랜치를 지정
+  schedule:
+    - cron: '30 6 * * *'  # 매일 오후 3시 30분에 실행 (한국 시간 기준)
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    
+    - name: Install dependencies
+      run: npm install
+    
+    - name: Run Cypress tests
+      run: npx cypress run
