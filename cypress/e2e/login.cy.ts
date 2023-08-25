@@ -24,8 +24,8 @@ describe('Login Functionality', () => {
 
     it('should navigate to the profile page after successful login',() => {
         cy.visit('https://accounts.elice.io/accounts')
-        cy.get('input[placeholder="이메일"]').should('exist').type(Cypress.env('login_email'))
-        cy.get('input[placeholder="비밀번호"]').should('exist').type(Cypress.env('login_pw'))
+        cy.get('input[placeholder="이메일"]').should('exist').type(Cypress.env('LOGIN_EMAIL'))
+        cy.get('input[placeholder="비밀번호"]').should('exist').type(Cypress.env('LOGIN_PW'))
         cy.get('#mui-3').click()
 
         cy.wait(1000)
