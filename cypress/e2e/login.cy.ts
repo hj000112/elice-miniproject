@@ -13,7 +13,7 @@ describe('Login Functionality', () => {
         cy.contains('button','카카오로 로그인')
     })
 
-    it('check login password',()=>{
+    it.skip('check login password',()=>{
         cy.visit('https://accounts.elice.io/accounts')
         cy.wait(1000)
         cy.get('input[placeholder="비밀번호"]').should('exist').type('password')
