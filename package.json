@@ -23,8 +23,8 @@
     "eject": "react-scripts eject"
   },
   "cypress":{
-    "projectId":""
-  }
+    "projectId":"gzk24n"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
