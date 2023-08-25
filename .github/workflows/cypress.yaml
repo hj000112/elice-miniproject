@@ -21,10 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          record: true
+      - name: Run Cypress Tests
+        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
+
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           LOGIN_EMAIL: ${{ secrets.LOGIN_EMAIL }}
