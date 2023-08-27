@@ -22,6 +22,6 @@ jobs:
         run: npm install
 
       - name: Run Cypress Tests
-        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --env LOGIN_EMAIL=${{ secrets.LOGIN_EMAIL }} --env LOGIN_PW=${{ secrets.LOGIN_PW }}
+        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --env LOGIN_EMAIL=${{ secrets.LOGIN_EMAIL }},LOGIN_PW=${{ secrets.LOGIN_PW }}
         env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }} 
