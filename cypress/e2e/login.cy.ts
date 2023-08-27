@@ -13,20 +13,20 @@ describe('Login Functionality', () => {
         cy.contains('button','카카오로 로그인')
     })
 
-    it.skip('check login password',()=>{
+    it('check login password',()=>{
         cy.visit('https://accounts.elice.io/accounts')
         cy.wait(1000)
-        cy.get('input[placeholder="비밀번호"]').should('exist').type('password')
+        cy.get('input[name="password"]').should('exist').type('password')
         cy.getByData("VisibilityOutlinedIcon").parent().click()
         
 
     })
 
-    it.skip('should navigate to the profile page after successful login',() => {
+    it('should navigate to the profile page after successful login',() => {
         cy.visit('https://accounts.elice.io/accounts')
         cy.wait(1000)
-        cy.get('input[placeholder="이메일"]').should('exist').type(Cypress.env('LOGIN_EMAIL'))
-        cy.get('input[placeholder="비밀번호"]').should('exist').type(Cypress.env('LOGIN_PW'))
+        cy.get('#mui-3').should('exist').type(Cypress.env('LOGIN_EMAIL'))
+        cy.get('input[name="password"]').should('exist').type(Cypress.env('LOGIN_PW'))
         cy.get('#mui-3').click()
 
         cy.wait(1000)
